@@ -18,10 +18,13 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Install dependencies
-        run: npm install pnpm && pnpm install
+      - name: Install PNPM
+        run: npm install pnpm -g
 
-      - name: Deploys
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Deploys to SST
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
