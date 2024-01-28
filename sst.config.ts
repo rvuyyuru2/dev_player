@@ -4,7 +4,7 @@ import { NextjsSite } from "sst/constructs";
 export default {
   config(_input) {
     return {
-      name: "new_player",
+      name: "new-player",
       region: "us-east-1",
     };
   },
