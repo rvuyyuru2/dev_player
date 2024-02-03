@@ -1,26 +1,8 @@
-const redis = require("redis");
-// SDS;
-const client = redis.createClient({
-  host: process.env.CACHE_HOST,
-  port: 6379,
-});
+import Redis from "ioredis";
 
-const getValue = (key: string) => {
-  return new Promise((resolve, reject) => {
-    client.get(key, (error: any, response: any) => {
-      if (error) reject(error);
-      else resolve(response);
-    });
-  });
-};
+// Create a Redis instance.
+// By default, it will connect to localhost:6379.
+// We are going to cover how to specify connection options soon.
+const CacheClient = new Redis(process.env.CACHE_URL!);
 
-const storeValue = (key: string, value: any) => {
-  return new Promise((resolve, reject) => {
-    client.set(key, value, (error: any, response: any) => {
-      if (error) reject(error);
-      else resolve(response);
-    });
-  });
-};
-
-export { getValue, storeValue };
+export default CacheClient;

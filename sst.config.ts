@@ -13,7 +13,7 @@ export default {
       const site = new NextjsSite(stack, "site", {
         environment: {
           DATABASE_URL: process.env.DATABASE_URL!,
-          CACHE_HOST: process.env.CACHE_HOST!,
+          CACHE_URL: process.env.CACHE_URL!,
         },
         edge: true,
         runtime: "nodejs20.x",
