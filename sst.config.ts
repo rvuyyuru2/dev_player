@@ -13,8 +13,10 @@ export default {
       const site = new NextjsSite(stack, "site", {
         environment: {
           DATABASE_URL: process.env.DATABASE_URL!,
-          REDIES_URL: process.env.REDIES_URL!,
+          CACHE_HOST: process.env.CACHE_HOST!,
         },
+        edge: true,
+        runtime: "nodejs20.x",
       });
 
       stack.addOutputs({
