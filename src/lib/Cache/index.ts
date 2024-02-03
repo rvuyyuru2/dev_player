@@ -1,6 +1,8 @@
 import { createClient } from "redis";
 
-const CacheClient = createClient();
+const CacheClient = createClient({
+  url: process.env.CACHE_URL!,
+});
 CacheClient.on("error", (err) => console.log("Redis Client Error", err));
 
 (async () => {
