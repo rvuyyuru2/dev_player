@@ -1,8 +1,10 @@
-import Redis from "ioredis";
+import { createClient } from "redis";
 
-// Create a Redis instance.
-// By default, it will connect to localhost:6379.
-// We are going to cover how to specify connection options soon.
-const CacheClient = new Redis(process.env.CACHE_URL!);
+const CacheClient = createClient();
+CacheClient.on("error", (err) => console.log("Redis Client Error", err));
+
+(async () => {
+  await CacheClient.connect();
+})();
 
 export default CacheClient;
