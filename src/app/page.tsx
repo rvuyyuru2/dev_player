@@ -1,14 +1,14 @@
 import db from "@/lib/database";
 import { thirdparty } from "../../drizzle/schema";
-import CacheClient from "@/lib/Cache";
+import { getValue, storeValue } from "@/lib/Cache";
 
 // "use client";
 async function getData() {
   const key = "thirdparty";
-  const res: any = await CacheClient.get(key);
+  const res: any = await getValue(key);
   if (!res) {
     const data: any = await db.select().from(thirdparty);
-    await CacheClient.set(key, data);
+    await storeValue(key, data);
     return [...data];
   }
 
