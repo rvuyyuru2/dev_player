@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1706937306979,
+      "tag": "0000_tricky_silver_sable",
+      "breakpoints": true
+    }
+  ]
+}

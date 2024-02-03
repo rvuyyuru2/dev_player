@@ -1,19 +1,12 @@
-import "./globals.css";
+import "../styles/globals.css";
 import type { Metadata } from "next";
-
 import localFont from "next/font/local";
-
 const spaceMono = localFont({
   src: [
     {
-      path: "../public/fonts/space-mono/SpaceMono-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/space-mono/SpaceMono-Italic.ttf",
-      weight: "400",
-      style: "italic",
+      path: "../../public/fonts/Montserrat/Montserrat-Medium.ttf",
+      weight: "500",
+      style: "medium",
     },
   ],
 });
@@ -34,9 +27,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout(
-  { children }: { children: React.ReactNode }
-) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body className={`${spaceMono.className}`}>
