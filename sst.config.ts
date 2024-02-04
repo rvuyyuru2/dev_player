@@ -4,7 +4,7 @@ import { NextjsSite } from "sst/constructs";
 export default {
   config(_input) {
     return {
-      name: "new-player",
+      name: "instaread-new-player",
       region: "us-east-1",
     };
   },

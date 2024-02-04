@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --watch",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --ci",
+    "db-d": "ssh db-dev-connect",
+    "cache": "ssh cache-connect",
+    "db-p": "ssh db-prod-connect"
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",
@@ -19,7 +22,7 @@
     "drizzle-orm": "^0.29.3",
     "framer-motion": "^11.0.3",
     "ioredis": "^5.3.2",
-    "million": "^2.6.4",
+    "million": "^3.0.2",
     "next": "14.1.0",
     "next-themes": "^0.2.1",
     "pg": "^8.11.3",
@@ -30,15 +33,15 @@
     "typescript": "5.3.3"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.2.1",
-    "@testing-library/react": "^14.1.2",
-    "@types/jest": "^29.5.11",
-    "@types/node": "20.11.6",
+    "@testing-library/jest-dom": "^6.4.1",
+    "@testing-library/react": "^14.2.1",
+    "@types/jest": "^29.5.12",
+    "@types/node": "20.11.16",
     "@types/pg": "^8.11.0",
-    "@types/react": "18.2.48",
+    "@types/react": "18.2.52",
     "@types/react-dom": "18.2.18",
     "@types/redis": "^4.0.11",
-    "aws-cdk-lib": "2.110.1",
+    "aws-cdk-lib": "2.126.0",
     "constructs": "10.3.0",
     "cssnano": "^6.0.3",
     "drizzle-kit": "^0.20.14",
@@ -48,7 +51,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "postcss": "8.4.33",
     "prettier-plugin-tailwindcss": "^0.5.11",
-    "sst": "^2.39.13",
+    "sst": "^2.40.1",
     "tailwindcss": "3.4.1"
   }
 }

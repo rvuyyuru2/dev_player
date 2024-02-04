@@ -6,6 +6,7 @@ import CacheClient from "@/lib/Cache";
 async function getData() {
   const key = "thirdparty";
   const res: any = await CacheClient.get(key);
+
   if (!res) {
     const data: any = await db.select().from(thirdparty);
     await CacheClient.set(key, data);
