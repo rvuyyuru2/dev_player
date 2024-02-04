@@ -40,7 +40,6 @@
     "@types/pg": "^8.11.0",
     "@types/react": "18.2.52",
     "@types/react-dom": "18.2.18",
-    "@types/redis": "^4.0.11",
     "aws-cdk-lib": "2.126.0",
     "constructs": "10.3.0",
     "cssnano": "^6.0.3",
