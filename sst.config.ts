@@ -17,6 +17,12 @@ export default {
         },
         edge: true,
         runtime: "nodejs20.x",
+        cdk: {
+          server: {
+            vpc: "vpc-a77ee8c3",
+            securityGroups: ["sg-0074f3414aba5951c", "sg-08ac9aeb3838f9120"],
+          },
+        },
       });
 
       stack.addOutputs({

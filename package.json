@@ -14,6 +14,7 @@
     "db-p": "ssh db-prod-connect"
   },
   "dependencies": {
+    "@aws-sdk/client-elasticache": "^3.504.0",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-slot": "^1.0.2",
     "autoprefixer": "10.4.17",
