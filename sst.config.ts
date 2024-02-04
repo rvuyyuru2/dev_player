@@ -1,5 +1,6 @@
 import { SSTConfig } from "sst";
 import { NextjsSite } from "sst/constructs";
+import { Service } from "sst/node/service";
 import { RetentionDays } from "aws-cdk-lib/aws-logs";
 import { Vpc, SubnetType } from "aws-cdk-lib/aws-ec2";
 export default {
@@ -13,6 +14,7 @@ export default {
     app.stack(function Site({ stack }) {
       // Create a VPC
       const vpc = new Vpc(stack, "vpc-a77ee8c3");
+      console.log(vpc);
 
       // Alternatively use an existing VPC
 
@@ -29,8 +31,6 @@ export default {
         runtime: "nodejs20.x",
         cdk: {
           server: {
-            vpc,
-            vpcSubnets,
             logRetention: RetentionDays.ONE_MONTH,
           },
         },
