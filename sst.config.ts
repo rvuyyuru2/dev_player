@@ -22,14 +22,6 @@ export default {
         runtime: "nodejs20.x",
         assets: {
           nonVersionedFilesTTL: 86000000,
-          versionedFilesTTL: 1000 * 60 * 60,
-          fileOptions: [
-            {
-              files: "**/*.zip",
-              cacheControl: "private,no-cache,no-store,must-revalidate",
-              contentType: "application/zip",
-            },
-          ],
         },
         cdk: {
           server: {
