@@ -8,18 +8,11 @@ export default {
     return {
       name: "instaread-new-player",
       region: "us-east-1",
+      cdk: {},
     };
   },
   stacks(app) {
     app.stack(function Site({ stack }) {
-      // Create a VPC
-      const vpc = new Vpc(stack, "vpc-a77ee8c3");
-
-      // Alternatively use an existing VPC
-      const vpcSubnets = {
-        subnetType: SubnetType.PRIVATE_WITH_EGRESS,
-      };
-
       const site = new NextjsSite(stack, "Site", {
         environment: {
           DATABASE_URL: process.env.DATABASE_URL!,
@@ -27,17 +20,25 @@ export default {
         },
         edge: true,
         runtime: "nodejs20.x",
+        assets: {
+          nonVersionedFilesTTL: 86000000,
+          versionedFilesTTL: 1000 * 60 * 60,
+          fileOptions: [
+            {
+              files: "**/*.zip",
+              cacheControl: "private,no-cache,no-store,must-revalidate",
+              contentType: "application/zip",
+            },
+          ],
+        },
         cdk: {
           server: {
             logRetention: RetentionDays.ONE_MONTH,
-            vpc: vpc,
-            vpcSubnets: vpcSubnets,
-          },
-          revalidation: {
-            vpc: vpc,
-            vpcSubnets: vpcSubnets,
           },
         },
+        customDomain: {},
+        logging: "combined",
+        bind: [],
       });
 
       stack.addOutputs({
