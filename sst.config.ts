@@ -36,9 +36,7 @@ export default {
             logRetention: RetentionDays.ONE_MONTH,
           },
         },
-        customDomain: {},
         logging: "combined",
-        bind: [],
       });
 
       stack.addOutputs({
