@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "sst bind next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "serve": "npx serve@latest out",
     "lint": "next lint",
     "test": "jest --watch",
     "test:ci": "jest --ci",
@@ -14,7 +15,6 @@
     "db-p": "ssh db-prod-connect"
   },
   "dependencies": {
-    "@aws-sdk/client-elasticache": "^3.504.0",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-slot": "^1.0.2",
     "autoprefixer": "10.4.17",
@@ -41,8 +41,6 @@
     "@types/pg": "^8.11.0",
     "@types/react": "18.2.52",
     "@types/react-dom": "18.2.18",
-    "aws-cdk-lib": "2.126.0",
-    "constructs": "10.3.0",
     "cssnano": "^6.0.3",
     "drizzle-kit": "^0.20.14",
     "eslint": "8.56.0",
@@ -51,7 +49,6 @@
     "jest-environment-jsdom": "^29.7.0",
     "postcss": "8.4.33",
     "prettier-plugin-tailwindcss": "^0.5.11",
-    "sst": "^2.40.1",
     "tailwindcss": "3.4.1"
   }
 }
