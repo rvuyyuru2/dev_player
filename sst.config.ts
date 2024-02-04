@@ -14,10 +14,8 @@ export default {
     app.stack(function Site({ stack }) {
       // Create a VPC
       const vpc = new Vpc(stack, "vpc-a77ee8c3");
-      console.log(vpc);
 
       // Alternatively use an existing VPC
-
       const vpcSubnets = {
         subnetType: SubnetType.PRIVATE_WITH_EGRESS,
       };
@@ -32,6 +30,12 @@ export default {
         cdk: {
           server: {
             logRetention: RetentionDays.ONE_MONTH,
+            vpc: vpc,
+            vpcSubnets: vpcSubnets,
+          },
+          revalidation: {
+            vpc: vpc,
+            vpcSubnets: vpcSubnets,
           },
         },
       });
