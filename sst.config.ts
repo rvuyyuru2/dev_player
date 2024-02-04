@@ -17,11 +17,6 @@ export default {
         },
         edge: true,
         runtime: "nodejs20.x",
-        cdk: {
-          server: {
-            allowAllOutbound: true,
-          },
-        },
       });
 
       stack.addOutputs({
